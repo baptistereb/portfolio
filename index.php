@@ -1,12 +1,6 @@
-<!-- site semaine accueil insa toulouse
-	projet timelpase 
-	projet alimentation labo
-	grolth-studio
-	gamer2winner
-	-->
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "A propos", "Projets", "Compétences", "Contact"];
-$en = ["en", "English", "Français", "Home", "About", "Projects", "Skills", "Contact"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact"];
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact"];
 
 function index() {
 	header('Location: #');
@@ -42,7 +36,6 @@ if(isset($_POST['language'])) {
 	<title>Portfolio - <?= $v[1] ?></title>
 	<link rel="stylesheet" type="text/css" href="css/all.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<link rel="stylesheet" type="text/css" href="css/about.css" />
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
 	<link rel="stylesheet" type="text/css" href="css/skill.css" />
 	<link rel="stylesheet" type="text/css" href="css/contact.css" />
@@ -58,18 +51,15 @@ if(isset($_POST['language'])) {
 				<a href="#index">
 					<li class="button"><?= $v[3] ?></li>
 				</a>
-				<a href="#about">
+				<a href="#project">
 					<li class="button"><?= $v[4] ?></li>
 				</a>
-				<a href="#project">
-					<li class="button"><?= $v[5] ?></li
-					></a>
 				<a href="#skill">
-					<li class="button"><?= $v[6] ?></li>
+					<li class="button"><?= $v[5] ?></li>
 				</a>
 				<a href="#contact">
 					<li class="contact_button">
-					<?= $v[7] ?>
+					<?= $v[6] ?>
 					<div id="arrow-right"></div>
 				</li></a>
 			</ul>				
@@ -101,11 +91,13 @@ if(isset($_POST['language'])) {
    <span></span>
    <span></span>
 </section>
-<section class="about" id="about">
-	test
-</section>
 <section class="project" id="project">
-	test
+	<!-- site semaine accueil insa toulouse
+	projet timelpase 
+	projet alimentation labo
+	grolth-studio
+	gamer2winner
+	-->
 </section>
 <section class="contact" id="skill">
 	test
