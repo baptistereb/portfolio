@@ -1,8 +1,11 @@
 header {
-    border-top: 3px solid white;
-    z-index: 0;
-    top: 0;
+    margin: -10px auto;
+    height: 100px;
     background: linear-gradient(#06031A 10%, 50%, transparent 100%); /*  090623  06031A  */
+}
+
+header nav {
+    padding-top: 20px; /* Pour descendre le menu par rapport au top*/
 }
 
 header nav ul form .menubutton {
@@ -10,9 +13,20 @@ header nav ul form .menubutton {
     border: 2px solid white;
     border-radius: 20px;
     color: white;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+header nav ul form .menubutton:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.1);
 }
 
 header nav .language_form {
+    position: absolute;
+    padding-top: 10px;
+    left: 20px;
     display: inline-block;
 }
 
@@ -37,6 +51,7 @@ header nav ul li.contact_button {
     border: 3px solid #69C0D9;
     border-radius: 20px;
     color: #69C0D9;
+    transition: 0.25s ease;
 }
 
 #arrow-right {
@@ -48,6 +63,11 @@ header nav ul li.contact_button {
     border-right: 3px solid #69C0D9;
     border-top: 3px solid #69C0D9;
     transform: rotate(45deg);
+    transition: 0.25s ease;
+}
+
+header ul li.button {
+    transition: 0.25s ease;
 }
 
 header ul li.button:hover {

@@ -48,7 +48,7 @@ if(isset($_POST['language'])) {
 	<link rel="stylesheet" type="text/css" href="css/contact.css" />
 </head>
 <body>
-<div class="background" id="index">
+<section class="background" id="index">
 	<header>
 		<nav>
 			<ul>
@@ -100,19 +100,19 @@ if(isset($_POST['language'])) {
    <span></span>
    <span></span>
    <span></span>
-</div>
-<div class="about" id="about">
+</section>
+<section class="about" id="about">
 	test
-</div>
-<div class="project" id="project">
+</section>
+<section class="project" id="project">
 	test
-</div>
-<div class="contact" id="skill">
+</section>
+<section class="contact" id="skill">
 	test
-</div>
-<div class="contact" id="contact">
+</section>
+<section class="contact" id="contact">
 	test
-</div>
+</section>
 
 </body>
 </html>
