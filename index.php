@@ -105,8 +105,7 @@ if(isset($_POST['language'])) {
 	projet timelpase 
 	projet alimentation labo
 	grolth-studio
-	gamer2winner
-	-->
+	gamer2winner-->
 </section>
 <section class="contact" id="skill">
 	test

@@ -13,7 +13,7 @@ header nav ul form .menubutton {
     border: 2px solid white;
     border-radius: 20px;
     color: white;
-    padding: 5px;
+    padding: 10px;
     transition: 0.3s;
 }
 
@@ -78,7 +78,7 @@ header ul li.button:hover {
 header ul li.contact_button:hover {
     /*border: 1px solid white;
     color: white;*/
-    background-color: rgba(105, 192, 217, 0.1);
+    background-color: rgba(105, 192, 217, 0.2);
     transition: 0.5s ease;
 }
 
@@ -157,7 +157,7 @@ header ul li.contact_button:hover #arrow-right {
 }
 
 .background {
-    position: fixed/*absolute*/;
+    position: sticky; /*fixed*/
     width: 100vw;
     height: 100vh;
     top: 0;
