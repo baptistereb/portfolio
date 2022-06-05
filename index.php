@@ -1,6 +1,6 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact"];
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D et plus globalement des nouvelles technologies"];
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers and more generally of new technologies"];
 
 function index() {
 	header('Location: #');
@@ -65,7 +65,16 @@ if(isset($_POST['language'])) {
 			</ul>				
 		</nav>
 	</header>
-   <span><!--<a href="test.html" style="color: #090623;">bv</a>--></span>
+
+	<div id="description">
+		<img src="img/profil.png" class="img_profil">
+		<div class="title">Baptiste Rébillard</div>
+		<div class="under_title"><?= $v['7'] ?></div>
+		<br><br>
+		<div class="under_title"><?= $v['8'] ?></div>
+	</div>
+
+   <span></span>
    <span></span>
    <span></span>
    <span></span>

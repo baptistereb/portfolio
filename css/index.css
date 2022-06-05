@@ -89,13 +89,64 @@ header ul li.contact_button:hover #arrow-right {
     transition: 0.5s ease;
 }
 
-@media (max-width: 560px) {
+.img_profil {
+    height: 50vh;
+    border-radius: 10000px;
+    border: 3px solid white;
+    float: left;
+}
+
+#description {
+    margin: 15vh;
+    color: white;
+    padding: 0;
+    height: 50vh;
+}
+
+.title {
+    margin: 50px 50px 0 55vh;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.under_title {
+    font-size: 25px;
+    margin-left: 55vh;
+}
+
+@media (max-width: 1000px) {
     header nav ul li {
         display: none;
     }
 
     header nav .language_form {
         display: show;
+    }
+
+    #description {
+        margin: 4vh;
+    }
+
+    #index {
+        text-align: center;
+    }
+
+    .img_profil {
+        height: 30vw;
+        border-radius: 10000px;
+        float: none;
+    }
+
+    .title {
+        margin: 0;
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .under_title {
+        font-size: 20px;
+        margin: 0;
     }
 }
 
