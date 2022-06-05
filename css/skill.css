@@ -1,0 +1,8 @@
+#skill {
+	background-color: blue;
+	z-index: 2;
+	position: absolute;
+	top: 200vh;
+	height: 100vh;
+	width: 100vw;
+}
