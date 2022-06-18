@@ -162,8 +162,8 @@ header ul li.contact_button:hover #arrow-right {
     height: 100vh;
     top: 0;
     left: 0;
-    background: #090623;/*
-    overflow: hidden;*/
+    background: #090623;
+    overflow: hidden;
 }
 
 .background span {

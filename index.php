@@ -39,6 +39,7 @@ if(isset($_POST['language'])) {
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
 	<link rel="stylesheet" type="text/css" href="css/skill.css" />
 	<link rel="stylesheet" type="text/css" href="css/contact.css" />
+	<script src="https://kit.fontawesome.com/1e414fe1c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section class="background" id="index">
@@ -107,11 +108,35 @@ if(isset($_POST['language'])) {
 	grolth-studio
 	gamer2winner-->
 </section>
-<section class="contact" id="skill">
-	test
+<section class="skill" id="skill">
+	<!-- Impression 3D -> gcode
+		Notions d'éléctroniques
+		Developpement HTML, CSS, PHP, des bases en JS
+			Sait utiliser les API discord, youtube, twitter
+
+		Serveur web : 
+		
+
+	-->
 </section>
 <section class="contact" id="contact">
-	test
+	<!--linkedin
+	mail : baptiste.rebillard@proton-mail.com
+	-->
+
+	<a href="mailto:baptiste.rebillard@protonmail.com">
+		<span class="button">
+			<div id="logo"><i class="fa-solid fa-envelope fa-2xl"></i></div>
+			<div class="button">baptiste.rebillard@protonmail.com</div>
+		</span>
+	</a>
+
+	<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin">
+		<span class="button">
+			<div id="logo"><i class="fa-solid fa-envelope fa-2xl"></i></div>
+			<div class="button">linkedin.com/in/baptistereb/</div>
+		</span>
+	</a>
 </section>
 
 </body>
