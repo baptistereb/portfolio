@@ -6,3 +6,47 @@
 	height: 100vh;
 	width: 100vw;
 }
+
+button {
+	display: inline-block;
+	background-color: transparent;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	transition: 0.3s;
+	font-size: 0;
+}
+
+
+button .title-button {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: grey;
+	margin: 0;
+}
+
+button div {
+	font-size: medium;
+}
+
+button .content {
+	display: inline-block;
+	background-color: red;
+	margin: 0;
+	width: 0;
+}
+
+button:hover .content {
+	width: 400px;
+	height: 100px;
+	transition: 0.4s;
+}
+
+button:hover {
+	transition: 0.3s;
+	width: 500px;
+}

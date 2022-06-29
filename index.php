@@ -39,7 +39,6 @@ if(isset($_POST['language'])) {
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
 	<link rel="stylesheet" type="text/css" href="css/skill.css" />
 	<link rel="stylesheet" type="text/css" href="css/contact.css" />
-	<script src="https://kit.fontawesome.com/1e414fe1c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section class="background" id="index">
@@ -119,24 +118,31 @@ if(isset($_POST['language'])) {
 
 	-->
 </section>
-<section class="contact" id="contact">
+<section class="contact" id="contact" align="center">
 	<!--linkedin
 	mail : baptiste.rebillard@proton-mail.com
 	-->
+<a href="mailto:baptiste.rebillard@protonmail.com">
+	<button>
+		<div class="title-button">
+			<!--<img src="img/mail.svg">-->wesh
+		</div>
+		<div class="content">
+			ee
+		</div>
+	</button>
+</a>
 
-	<a href="mailto:baptiste.rebillard@protonmail.com">
-		<span class="button">
-			<div id="logo"><i class="fa-solid fa-envelope fa-2xl"></i></div>
-			<div class="button">baptiste.rebillard@protonmail.com</div>
-		</span>
-	</a>
-
-	<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin">
-		<span class="button">
-			<div id="logo"><i class="fa-solid fa-envelope fa-2xl"></i></div>
-			<div class="button">linkedin.com/in/baptistereb/</div>
-		</span>
-	</a>
+<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin">
+	<button>
+		<div class="title-button">
+			<!--<img src="img/linkedin.svg">-->wesh
+		</div>
+		<div class="content">
+			ee
+		</div>
+	</button>
+</a>
 </section>
 
 </body>
