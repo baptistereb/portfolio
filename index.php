@@ -1,6 +1,6 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D et plus globalement des nouvelles technologies"];
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers and more generally of new technologies"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D et plus globalement des nouvelles technologies (communement appelé : nerd)"];
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers and more generally of new technologies (commonly called : a nerd)"];
 
 function index() {
 	header('Location: #');
@@ -122,27 +122,23 @@ if(isset($_POST['language'])) {
 	<!--linkedin
 	mail : baptiste.rebillard@proton-mail.com
 	-->
-<a href="mailto:baptiste.rebillard@protonmail.com">
-	<button>
-		<div class="title-button">
-			<!--<img src="img/mail.svg">-->wesh
-		</div>
+	<a href="mailto:baptiste.rebillard@protonmail.com" class="a-button">
+		<img src="img/mail.svg" class="title-button">
 		<div class="content">
-			ee
+			<div class="table">
+				<div class="cell">baptiste.rebillard@protonmail.com</div>
+			</div>
 		</div>
-	</button>
-</a>
+	</a>
 
-<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin">
-	<button>
-		<div class="title-button">
-			<!--<img src="img/linkedin.svg">-->wesh
-		</div>
+	<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin" class="a-button">
+		<img src="img/linkedin.svg" class="title-button">
 		<div class="content">
-			ee
+			<div class="table">
+				<div class="cell">linkedin.com/in/baptistereb</div>
+			</div>
 		</div>
-	</button>
-</a>
+	</a>
 </section>
 
 </body>

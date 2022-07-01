@@ -7,46 +7,89 @@
 	width: 100vw;
 }
 
-button {
+.a-button {
 	display: inline-block;
-	background-color: transparent;
+	background-color: white;
 	width: 100px;
 	height: 100px;
-	margin: 20px;
 	padding: 0;
-	margin: 0;
+	margin: 20px;
 	border: 0;
 	transition: 0.3s;
 	font-size: 0;
+	text-decoration: none;
+	text-align: left;
+	border: 3px solid black;
+	border-radius: 15px;
 }
 
 
-button .title-button {
+.a-button .title-button {
 	display: inline-block;
 	width: 100px;
 	height: 100px;
-	background-color: grey;
+	background-color: transparent;
 	margin: 0;
 }
 
-button div {
+.a-button div {
 	font-size: medium;
 }
 
-button .content {
+.a-button .content {
 	display: inline-block;
-	background-color: red;
+	background-color: transparent;
 	margin: 0;
 	width: 0;
-}
-
-button:hover .content {
-	width: 400px;
+	position: relative;
+	/*top: -85px;*/
+	left: 0;
 	height: 100px;
-	transition: 0.4s;
+	text-align: center;
 }
 
-button:hover {
-	transition: 0.3s;
-	width: 500px;
+.a-button .table {
+	visibility: hidden;
+	color: white;
+	font-weight: bold;
+}
+
+.table {
+	bottom: 0;
+	display: table;
+	width: 100%;
+	text-align: center;
+}
+
+.cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media (min-width: 900px) {
+	.a-button:hover .content {
+		width: 400px;
+		height: 100px;
+		transition: 0.3s;
+		background-color: black;
+		border-radius: 0 10px 10px 0;
+	}
+
+	.a-button:hover {
+		transition: 0.3s;
+		width: 500px;
+	}
+
+	.a-button:hover .table {
+		visibility: visible;
+		transition-delay: 0.2s;
+		height: 100%;
+	}
+}
+
+@media (max-width: 900px) {
+	.a-button:hover {
+		transition: 0.3s;
+		transform: scale(1.1);
+	}
 }
