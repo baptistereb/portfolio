@@ -5,4 +5,28 @@
 	top: 200vh;
 	height: 100vh;
 	width: 100vw;
+	text-align: center;
+	padding: 0;
+}
+
+.skill table {
+	width: 80vw;
+	height: 80vh;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10vh;
+}
+
+.skill table td ul {
+	display: block;
+	background-color: red;
+	height: 80vh;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 2em;
+}
+
+.skill table td ul li {
+    list-style-type: none;
 }

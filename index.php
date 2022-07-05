@@ -108,15 +108,29 @@ if(isset($_POST['language'])) {
 	gamer2winner-->
 </section>
 <section class="skill" id="skill">
-	<!-- Impression 3D -> gcode
-		Notions d'éléctroniques
-		Developpement HTML, CSS, PHP, des bases en JS
-			Sait utiliser les API discord, youtube, twitter
-
-		Serveur web : 
-		
-
-	-->
+	<table>
+		<td width="50%">
+			<ul>
+				<li>Impression 3D</li>
+				<li>Electronique</li>
+				<li>Montage PC</li>
+				<li>Conception de PCB</li>
+			</ul>
+		</td>
+		<td width="50%">
+			<ul>
+				<li>HTML, CSS, PHP</li>
+				<li>quelques bases en JS</li>
+				<li>des bases en ADA, python</li>
+				<li>connaissances des API suivantes : discord, youtube, twitter</li>
+				<li>UNIX</li>
+				<li>GIT</li>
+				<li>Sait configurer un serveur web avec virtualhost et certificat SSL</li>
+				<li>Gcode pour imprimante 3D</li>
+				<li>Modélisation 3D sur Fusion360<li>
+			</ul>
+		</td>
+	</table>
 </section>
 <section class="contact" id="contact" style="text-align:center;">
 	<div class="title-contact"><?= $v['9'] ?></div>
