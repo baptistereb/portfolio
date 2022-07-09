@@ -1,6 +1,6 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés"];
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible"];
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contat me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !"];
 
 function index() {
 	header('Location: #');
@@ -37,6 +37,7 @@ if(isset($_POST['language'])) {
 	<link rel="stylesheet" type="text/css" href="css/all.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/project.css" />
+	<link rel="stylesheet" type="text/css" href="css/link.css" />
 	<link rel="stylesheet" type="text/css" href="css/skill.css" />
 	<link rel="stylesheet" type="text/css" href="css/contact.css" />
 </head>
@@ -53,6 +54,9 @@ if(isset($_POST['language'])) {
 				</a>
 				<a href="#project">
 					<li class="button"><?= $v[4] ?></li>
+				</a>
+				<a href="#link">
+					<li class="button"><?= $v[12] ?></li>
 				</a>
 				<a href="#skill">
 					<li class="button"><?= $v[5] ?></li>
@@ -106,9 +110,16 @@ if(isset($_POST['language'])) {
 	projet alimentation labo
 	grolth-studio
 	gamer2winner-->
+	<h1><?= $v[14] ?></h1>
+</section>
+<section class="link" id="link">
+	<a href="https://github.com/baptistereb" target="" class="button">
+			
+			
+	</a>
 </section>
 <section class="skill" id="skill">
-	<table>
+	<?php /*<table>
 		<td width="50%">
 			<ul>
 				<li>Impression 3D</li>
@@ -130,7 +141,8 @@ if(isset($_POST['language'])) {
 				<li>Modélisation 3D sur Fusion360<li>
 			</ul>
 		</td>
-	</table>
+	</table>*/ ?>
+	<h1><?= $v[13] ?> ^^</h1>
 </section>
 <section class="contact" id="contact" style="text-align:center;">
 	<div class="title-contact"><?= $v['9'] ?></div>

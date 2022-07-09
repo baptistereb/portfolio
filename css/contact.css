@@ -2,7 +2,7 @@
 	background-color: white;
 	z-index: 2;
 	position: absolute;
-	top: 300vh;
+	top: 400vh;
 	height: 100vh;
 	width: 100vw;
 }
@@ -91,6 +91,19 @@
 	.a-button:hover {
 		transition: 0.3s;
 		transform: scale(1.1);
+	}
+}
+
+@media (max-width: 450px) {
+	.a-button {
+		transition: 0.3s;
+		transform: scale(0.5);
+		margin: 3px;
+	}
+
+	.a-button:hover {
+		transition: 0.3s;
+		transform: scale(0.6);
 	}
 }
 
