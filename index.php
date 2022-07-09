@@ -1,6 +1,8 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible"];
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contat me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible", "Derniers projets / Projets en cours", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife (ptit projet à la con)", "Calculer une distance de levenshtein (ptit script à la con)"];
+
+
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contat me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !", "Latest projects / Current projects", "INSA Toulouse welcome week website", "MyEntireLife (little bullshit project)", "Calculate a levenshtein distance (little stupid script)"];
 
 function index() {
 	header('Location: #');
@@ -113,10 +115,18 @@ if(isset($_POST['language'])) {
 	<h1><?= $v[14] ?></h1>
 </section>
 <section class="link" id="link">
-	<a href="https://github.com/baptistereb" target="" class="button">
-			
-			
-	</a>
+	<div id="box-middle">
+		<h1><?= $v[15] ?></h1>
+		<a href="https://etud.insa-toulouse.fr/~accueil_insa" target="_link" class="button">
+			<?= $v[16] ?>
+		</a>
+		<a href="myentirelife.php" target="_link" class="button">
+			<?= $v[17] ?>
+		</a>
+		<a href="levenshtein.php" target="_link" class="button">
+			<?= $v[18] ?>
+		</a>
+	</div>
 </section>
 <section class="skill" id="skill">
 	<?php /*<table>
