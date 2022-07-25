@@ -74,7 +74,7 @@ if(isset($_POST['language'])) {
 
 	<div id="description">
 		<img src="img/profil.png" class="img_profil">
-		<div class="title">Baptiste Rébillard</div>
+		<div class="title">Baptiste Rébillard &ltBR&gt</div>
 		<div class="under_title"><?= $v['7'] ?></div>
 		<br><br>
 		<div class="under_title"><?= $v['8'] ?></div>
