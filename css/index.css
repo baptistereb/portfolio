@@ -118,6 +118,11 @@ header ul li.contact_button:hover #arrow-right {
     margin-left: 55vh;
 }
 
+.NAF {
+    text-decoration: none;
+    color:  ;
+}
+
 @media (max-width: 1000px) {
     header nav ul li {
         display: none;
