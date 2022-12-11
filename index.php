@@ -29,6 +29,27 @@ if(isset($_POST['language'])) {
 		index();
 	}
 }
+
+if(isset($_COOKIE['hexa'])) {
+	if($_COOKIE['hexa'] == "true") {
+		for($i=0; $i<count($v);$i++) {
+			$v[$i] = "0x".bin2hex($v[$i]);
+		}
+	}
+} else {
+	setcookie("hexa", "false");
+	index();
+}
+
+if(isset($_POST['hexa'])) {
+	if($_COOKIE['hexa'] == "false") {
+		setcookie("hexa", "true");
+		index();
+	} else {
+		setcookie("hexa", "false");
+		index();
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?= $v[0] ?>">
@@ -50,6 +71,7 @@ if(isset($_POST['language'])) {
 			<ul>
 				<form method="POST" class="language_form">
 					<input type="submit" value="<?=$v[2];?>" name="language" class="menubutton">
+					<input type="submit" value="<?php if($_COOKIE['hexa'] == "true") { echo "Hexa : ON"; } else { echo "Hexa : OFF"; } ?>" name="hexa" class="menubutton">
 				</form>
 				<a href="#index">
 					<li class="button"><?= $v[3] ?></li>
