@@ -1,8 +1,8 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible", "Derniers projets / Projets en cours", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife (ptit projet à la con)", "Calculer une distance de levenshtein (ptit script à la con)"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible", "Derniers projets / Projets en cours", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (codé en 5h)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)"];
 
 
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !", "Latest projects / Current projects", "INSA Toulouse welcome week website", "MyEntireLife (little bullshit project)", "Calculate a levenshtein distance (little stupid script)"];
+$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !", "Latest projects / Current projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (coded in 5h)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)"];
 
 function index() {
 	header('Location: #');
@@ -129,17 +129,17 @@ if(isset($_POST['hexa'])) {
    <span></span>
 </section>
 <section class="project" id="project">
-	<!-- site semaine accueil insa toulouse
+	<!--
 	projet timelpase 
-	projet alimentation labo
-	grolth-studio
-	gamer2winner-->
+	projet alimentation de labo
+	site de l'amicale
+	grolth-studio-->
 	<h1><?= $v[14] ?></h1>
 </section>
 <section class="link" id="link">
 	<div id="box-middle">
 		<h1><?= $v[15] ?></h1>
-		<a href="https://etud.insa-toulouse.fr/~accueil_insa" target="_link" class="button">
+		<a href="accueil.insat.fr" target="_link" class="button">
 			<?= $v[16] ?>
 		</a>
 		<a href="myentirelife.php" target="_link" class="button">
@@ -147,6 +147,15 @@ if(isset($_POST['hexa'])) {
 		</a>
 		<a href="levenshtein.php" target="_link" class="button">
 			<?= $v[18] ?>
+		</a>
+		<a href="https://github.com/baptistereb/thumbs-generator" target="_link" class="button">
+			<?= $v[19] ?>
+		</a>
+		<a href="https://github.com/baptistereb/micasend" target="_link" class="button">
+			<?= $v[20] ?>
+		</a>
+		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button">
+			<?= $v[21] ?>
 		</a>
 	</div>
 </section>
