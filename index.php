@@ -95,7 +95,7 @@ if(isset($_POST['hexa'])) {
 	</header>
 
 	<div id="description">
-		<img src="img/profil.png" class="img_profil">
+		<img src="img/profil.jpg" class="img_profil">
 		<div class="title">Baptiste Rébillard &ltBR&gt</div>
 		<div class="under_title"><?= $v['7'] ?></div>
 		<br><br>
