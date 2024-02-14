@@ -1,5 +1,5 @@
 #skill {
-	background-color: grey;
+	background-color: #ECECEC;
 	z-index: 2;
 	position: absolute;
 	top: 300vh;
@@ -15,5 +15,10 @@
 	top: 50%;
 	margin: -1.5em 10vw 0 10vw;
 	font-size: 3em;
-	color: white;
+	color: black;
+}
+
+#skill .cv {
+	height: 100vh;
+	width: 100vw;
 }

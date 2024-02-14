@@ -1,8 +1,8 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)", "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Portail", "Erreur 404", "Bientôt disponible", "Derniers projets / Projets en cours", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (codé en 5h)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (codé en 5h)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS"];
 
 
-$en = ["en", "English", "Français", "Home", "Projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Portal", "404 Not found", "Coming soon !", "Latest projects / Current projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (coded in 5h)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)"];
+$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (coded in 5h)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS"];
 
 function index() {
 	header('Location: #');
@@ -129,24 +129,21 @@ if(isset($_POST['hexa'])) {
    <span></span>
 </section>
 <section class="project" id="project">
-	<!--
-	projet timelpase 
-	projet alimentation de labo
-	site de l'amicale
-	grolth-studio-->
-	<h1><?= $v[14] ?></h1>
+	<div id="box-middle">
+		<h1><?= $v[4] ?></h1>
+		<a href="https://github.com/baptistereb/McEliece" target="_link" class="button">
+			<?= $v[22] ?>
+		</a>
+	</div>
 </section>
 <section class="link" id="link">
 	<div id="box-middle">
 		<h1><?= $v[15] ?></h1>
-		<a href="accueil.insat.fr" target="_link" class="button">
-			<?= $v[16] ?>
+		<a href="https://real-intgine.insat.fr" target="_link" class="button">
+			<?= $v[23] ?>
 		</a>
-		<a href="myentirelife.php" target="_link" class="button">
-			<?= $v[17] ?>
-		</a>
-		<a href="levenshtein.php" target="_link" class="button">
-			<?= $v[18] ?>
+		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button">
+			<?= $v[21] ?>
 		</a>
 		<a href="https://github.com/baptistereb/thumbs-generator" target="_link" class="button">
 			<?= $v[19] ?>
@@ -154,36 +151,23 @@ if(isset($_POST['hexa'])) {
 		<a href="https://github.com/baptistereb/micasend" target="_link" class="button">
 			<?= $v[20] ?>
 		</a>
-		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button">
-			<?= $v[21] ?>
+		<a href="https://accueil.insat.fr" target="_link" class="button">
+			<?= $v[16] ?>
 		</a>
+		<a href="myentirelife.php" target="_link" class="button">
+			<?= $v[17] ?>
+		</a>
+		<!--<a href="levenshtein.php" target="_link" class="button">
+			<?php //echo $v[18]; ?>
+		</a>-->
 	</div>
 </section>
 <section class="skill" id="skill">
-	<?php /*<table>
-		<td width="50%">
-			<ul>
-				<li>Impression 3D</li>
-				<li>Electronique</li>
-				<li>Montage PC</li>
-				<li>Conception de PCB</li>
-			</ul>
-		</td>
-		<td width="50%">
-			<ul>
-				<li>HTML, CSS, PHP</li>
-				<li>quelques bases en JS</li>
-				<li>des bases en ADA, python</li>
-				<li>connaissances des API suivantes : discord, youtube, twitter</li>
-				<li>UNIX</li>
-				<li>GIT</li>
-				<li>Sait configurer un serveur web avec virtualhost et certificat SSL</li>
-				<li>Gcode pour imprimante 3D</li>
-				<li>Modélisation 3D sur Fusion360<li>
-			</ul>
-		</td>
-	</table>*/ ?>
-	<h1><?= $v[13] ?> ^^</h1>
+	<?php if($_COOKIE['language'] == "fr") { ?>
+		<embed src="./baptistereb_fr.pdf" class="cv" type="application/pdf"/>
+	<?php } else { ?>
+		<embed src="./baptistereb_en.pdf" class="cv" type="application/pdf"/>
+	<?php } ?> 	
 </section>
 <section class="contact" id="contact" style="text-align:center;">
 	<div class="title-contact"><?= $v['9'] ?></div>
@@ -225,7 +209,7 @@ if(isset($_POST['hexa'])) {
 	</a>
 
 	<div id="copyright">
-		<span>Copyright © 2022 - Rébillard Baptiste - <?= $v['11'] ?></span>
+		<span>Copyright © 2024 - Rébillard Baptiste - <?= $v['11'] ?></span>
 	</div>
 </section>
 

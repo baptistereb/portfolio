@@ -1,5 +1,5 @@
 #project {
-	background-color: grey;
+	background-color: #ECECEC;
 	z-index: 2;
 	position: absolute;
 	top: 100vh;
@@ -9,10 +9,27 @@
 }
 
 #project h1 {
-	position: absolute;
-	height: 3em;
-	top: 50%;
-	margin: -1.5em 10vw 0 10vw;
-	font-size: 3em;
-	color: white;
+    margin-bottom: 30px;
+    color:black;
+}
+
+#project a.button {
+    background-color: #ECECEC;
+    border: none;
+    color: #69C0D9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid #69C0D9;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+#project a.button:hover {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #69C0D9;
+    color: white;
 }
