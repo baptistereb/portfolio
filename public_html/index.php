@@ -1,8 +1,8 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (codé en 5h)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (inutile)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS", "Moteur 3D en C", "php2latex (permet de générer des pdf LaTeX en php)"];
 
 
-$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (coded in 5h)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS"];
+$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (useless)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS", "3D graphics engine in C", "php2latex (allows you to create pdf with LaTeX in php)"];
 
 function index() {
 	header('Location: #');
@@ -131,34 +131,40 @@ if(isset($_POST['hexa'])) {
 <section class="project" id="project">
 	<div id="box-middle">
 		<h1><?= $v[4] ?></h1>
-		<a href="https://github.com/baptistereb/McEliece" target="_link" class="button">
+		<a href="https://github.com/baptistereb/McEliece" target="_link" class="button_blue">
 			<?= $v[22] ?>
+		</a>
+		<a href="https://github.com/baptistereb/real-intgine-c" target="_link" class="button_blue">
+			<?= $v[24] ?>
 		</a>
 	</div>
 </section>
 <section class="link" id="link">
 	<div id="box-middle">
 		<h1><?= $v[15] ?></h1>
-		<a href="https://real-intgine.insat.fr" target="_link" class="button">
+		<a href="https://github.com/baptistereb/real-intgine-c" target="_link" class="button_blue">
+			<?= $v[25] ?>
+		</a>
+		<a href="https://real-intgine.insat.fr" target="_link" class="button_blue">
 			<?= $v[23] ?>
 		</a>
-		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button">
+		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button_blue">
 			<?= $v[21] ?>
 		</a>
-		<a href="https://github.com/baptistereb/thumbs-generator" target="_link" class="button">
+		<a href="https://github.com/baptistereb/thumbs-generator" target="_link" class="button_blue">
 			<?= $v[19] ?>
 		</a>
-		<a href="https://github.com/baptistereb/micasend" target="_link" class="button">
+		<a href="https://github.com/baptistereb/micasend" target="_link" class="button_blue">
 			<?= $v[20] ?>
 		</a>
-		<a href="https://accueil.insat.fr" target="_link" class="button">
+		<a href="https://accueil.insat.fr" target="_link" class="button_blue">
 			<?= $v[16] ?>
 		</a>
-		<a href="myentirelife.php" target="_link" class="button">
+		<a href="myentirelife.php" target="_link" class="button_blue">
 			<?= $v[17] ?>
 		</a>
-		<!--<a href="levenshtein.php" target="_link" class="button">
-			<?php //echo $v[18]; ?>
+		<!--<a href="levenshtein.php" target="_link" class="button_blue">
+			< $v[18]; ?>
 		</a>-->
 	</div>
 </section>

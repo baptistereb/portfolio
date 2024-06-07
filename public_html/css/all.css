@@ -12,3 +12,38 @@ body {
 	/*font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;*/
 	overflow-x: hidden;
 }
+
+#box-middle {
+	position: absolute;
+    flex-wrap: nowrap | wrap | wrap-reverse | center;
+  	align-content: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
+a.button_blue {
+    border: none;
+    color: #69C0D9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid #69C0D9;
+    border-radius: 6px;
+    margin: 10px;
+}
+
+a.button_blue:hover {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #69C0D9;
+    color: white;
+}
+
+h1 {
+	margin: 40px;
+	font-size: 2em;
+	bot: 0;
+}
