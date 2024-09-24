@@ -1,8 +1,8 @@
 <?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (inutile)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS", "Moteur 3D en C", "php2latex (permet de générer des pdf LaTeX en php)"];
+$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (inutile)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS", "Moteur 3D en C", "php2latex (permet de générer des pdf LaTeX en php)", "Site de l'Amicale (BDE INSA Toulouse)"];
 
 
-$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (useless)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS", "3D graphics engine in C", "php2latex (allows you to create pdf with LaTeX in php)"];
+$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (useless)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS", "3D graphics engine in C", "php2latex (allows you to create pdf with LaTeX in php)", "Website of the Amicale (INSA Toulouse students' association)"];
 
 function index() {
 	header('Location: #');
@@ -142,7 +142,10 @@ if(isset($_POST['hexa'])) {
 <section class="link" id="link">
 	<div id="box-middle">
 		<h1><?= $v[15] ?></h1>
-		<a href="https://github.com/baptistereb/real-intgine-c" target="_link" class="button_blue">
+		<a href="https://amicale-insat.fr" target="_link" class="button_blue">
+			<?= $v[26] ?>
+		</a>
+		<a href="https://github.com/baptistereb/php2latex" target="_link" class="button_blue">
 			<?= $v[25] ?>
 		</a>
 		<a href="https://real-intgine.insat.fr" target="_link" class="button_blue">
