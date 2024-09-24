@@ -131,6 +131,9 @@ if(isset($_POST['hexa'])) {
 <section class="project" id="project">
 	<div id="box-middle">
 		<h1><?= $v[4] ?></h1>
+		<a href="https://amicale-insat.fr" target="_link" class="button_blue">
+			<?= $v[26] ?>
+		</a>
 		<a href="https://github.com/baptistereb/McEliece" target="_link" class="button_blue">
 			<?= $v[22] ?>
 		</a>
@@ -142,9 +145,6 @@ if(isset($_POST['hexa'])) {
 <section class="link" id="link">
 	<div id="box-middle">
 		<h1><?= $v[15] ?></h1>
-		<a href="https://amicale-insat.fr" target="_link" class="button_blue">
-			<?= $v[26] ?>
-		</a>
 		<a href="https://github.com/baptistereb/php2latex" target="_link" class="button_blue">
 			<?= $v[25] ?>
 		</a>
