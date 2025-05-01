@@ -98,7 +98,7 @@
     }
 
     function loadArticles() {
-      fetch('articles.json')
+      fetch('articles/articles.json')
         .then(response => response.json())
         .then(articles => {
           const articleList = document.getElementById('article-list');

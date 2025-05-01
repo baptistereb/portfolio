@@ -1,5 +1,5 @@
 <?php
-$articles = json_decode(file_get_contents('articles.json'), true);
+$articles = json_decode(file_get_contents('articles/articles.json'), true);
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $article = null;
 foreach ($articles as $a) {
