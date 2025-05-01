@@ -1,0 +1,42 @@
+[
+  {
+    "image": "showoff/real-intgine.png",
+    "link": "real-intgine/",
+    "title": {
+      "fr": "Moteur graphique 3D en JS",
+      "en": "3D Graphics Engine in JS"
+    }
+  },
+  {
+    "image": "showoff/gunnars.png",
+    "link": "gunnars_vacation/",
+    "title": {
+      "fr": "Challenge GEOINT THCON2025",
+      "en": "THCON2025 geoint Challenge"
+    }
+  },
+  {
+    "image": "showoff/amicale.png",
+    "link": "https://amicale-insat.fr/",
+    "title": {
+      "fr": "Site de l'Amicale de l'INSA Toulouse",
+      "en": "INSA Toulouse Student Association Website"
+    }
+  },
+  {
+    "image": "showoff/latex.png",
+    "link": "https://github.com/ClubInfoInsaT/formation-latex/",
+    "title": {
+      "fr": "Conception et animation d'une formation LaTeX",
+      "en": "Design and delivery of a LaTeX training course"
+    }
+  },
+  {
+    "image": "showoff/github.png",
+    "link": "https://github.com/baptistereb",
+    "title": {
+      "fr": "Mon profil github",
+      "en": "My GITHUB profile"
+    }
+  }
+]

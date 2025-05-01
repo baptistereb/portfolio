@@ -110,17 +110,24 @@ if (!$article) {
       const currentLang = document.documentElement.lang;
       const newLang = currentLang === 'fr' ? 'en' : 'fr';
       document.documentElement.lang = newLang;
+      localStorage.setItem('lang', newLang); // <-- ici
+
       document.getElementById('lang-btn').textContent = currentLang.toUpperCase();
 
       document.querySelectorAll('[data-fr]').forEach(el => {
         el.innerHTML = el.getAttribute(`data-${newLang}`);
       });
     }
-
+    
     window.addEventListener('DOMContentLoaded', () => {
+      // Appliquer le thème
       const isDark = document.documentElement.classList.contains('dark');
       document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
-      document.getElementById('lang-btn').textContent = document.documentElement.lang.toUpperCase();
+
+      // Appliquer la langue depuis le localStorage
+      const savedLang = localStorage.getItem('lang') || 'en';
+      document.documentElement.lang = savedLang;
+
       applyLanguage();
     });
   </script>

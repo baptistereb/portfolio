@@ -36,22 +36,31 @@
     <div>
       <h2 class="text-3xl font-bold mb-2" data-fr="Salut, moi c’est Baptiste 👋" data-en="Hi, I'm Baptiste 👋"></h2>
       <p class="text-gray-700 dark:text-gray-300 mb-4" data-fr="Étudiant en informatique, passionné par la cybersécurité, l'impression 3D et les projets libres." data-en="Computer science student, passionate about cybersecurity, 3D printing, and open-source projects."></p>
-      <!--<a href="#articles" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline" data-fr="Voir mes derniers articles →" data-en="See my latest articles →">Voir mes derniers articles →</a>-->
+      <a href="#articles" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline" data-fr="Voir mes derniers articles →" data-en="See my latest articles →">Voir mes derniers articles →</a>
+    </div>
+  </section>
+
+  <!-- Showoff-->
+  <section id="showoff" class="bg-gray-50 dark:bg-gray-800 py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6" data-fr="Projets" data-en="Projects"></h3>
+      <div class="grid gap-6 md:grid-cols-3 sm:grid-cols-1" id="showoff-list">
+        <!-- Liste des projets sera ajoutée ici -->
+      </div>
     </div>
   </section>
 
   <!-- Articles -->
-  <section id="articles" class="bg-gray-50 dark:bg-gray-800 py-12">
+  <section id="articles" class="py-12">
     <div class="max-w-5xl mx-auto px-4">
       <h3 class="text-2xl font-bold mb-6" data-fr="Articles récents" data-en="Latest articles"></h3>
       <div class="grid gap-6 md:grid-cols-2" id="article-list">
-        <!-- Les articles seront insérés ici via JavaScript -->
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact" class="bg-gray-100 dark:bg-gray-800 mt-16 py-8">
+  <footer id="contact" class="bg-gray-50 dark:bg-gray-800 mt-16 py-8">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <p class="mb-4 text-center text-lg" data-fr="N'hésite pas à me contacter 👇" data-en="Feel free to reach out 👇"></p>
       <div class="flex justify-center space-x-6">
@@ -90,6 +99,8 @@
       const currentLang = document.documentElement.lang;
       const newLang = currentLang === 'fr' ? 'en' : 'fr';
       document.documentElement.lang = newLang;
+      localStorage.setItem('lang', newLang); // <-- ici
+
       document.getElementById('lang-btn').textContent = currentLang.toUpperCase();
 
       document.querySelectorAll('[data-fr]').forEach(el => {
@@ -122,10 +133,43 @@
         .catch(error => console.error('Error loading articles:', error));
     }
 
+    function loadShowoff() {
+    fetch('showoff/showoff.json') // Remplace par le chemin de ton fichier JSON
+      .then(response => response.json())
+      .then(projects => {
+        const showoffList = document.getElementById('showoff-list');
+
+        projects.forEach(project => {
+          const projectElement = document.createElement('a');
+          projectElement.href = project.link;
+          projectElement.className = 'relative block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-transform transform hover:scale-105';
+
+          projectElement.innerHTML = `
+            <div class="w-full h-32 bg-cover bg-center" style="background-image: url('${project.image}');">
+              <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center text-white">
+                <h4 class="text-xl font-semibold" data-fr="${project.title.fr}" data-en="${project.title.en}"></h4>
+              </div>
+            </div>
+          `;
+
+          showoffList.appendChild(projectElement);
+        });
+
+        applyLanguage(); // Applique la langue (utile si tu utilises plusieurs langues)
+      })
+      .catch(error => console.error('Error loading projects:', error));
+  }
     window.addEventListener('DOMContentLoaded', () => {
-      loadArticles();
+      // Appliquer le thème
       const isDark = document.documentElement.classList.contains('dark');
       document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
+
+      // Appliquer la langue depuis le localStorage
+      const savedLang = localStorage.getItem('lang') || 'en';
+      document.documentElement.lang = savedLang;
+
+      loadArticles();
+      loadShowoff();
     });
   </script>
 </body>

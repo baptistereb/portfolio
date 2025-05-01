@@ -12,25 +12,28 @@
     <h2 class="text-xl font-semibold mt-10 mb-4">Gunnar's vacations</h2>
     <ul class="space-y-2">
       <li>
-        <a href="geozint1.html" class="text-blue-500 hover:underline">📝 Part 1</a>
+        <a href="geozint1.html" class="text-blue-500 hover:underline">🔍 Part 1</a>
       </li>
       <li>
-        <a href="geozint2.html" class="text-blue-500 hover:underline">📝 Part 2</a>
+        <a href="geozint2.html" class="text-blue-500 hover:underline">🔍 Part 2</a>
       </li>
       <li>
-        <a href="geozint3.html" class="text-blue-500 hover:underline">📝 Part 3</a>
+        <a href="geozint3.html" class="text-blue-500 hover:underline">🔍 Part 3</a>
       </li>
       <li>
-        <a href="geozint4.html" class="text-blue-500 hover:underline">📝 Part 4</a>
+        <a href="geozint4.html" class="text-blue-500 hover:underline">🔍 Part 4</a>
       </li>
       <li>
-        <a href="geozint5.html" class="text-blue-500 hover:underline">📝 Part 5</a>
+        <a href="geozint5.html" class="text-blue-500 hover:underline">🔍 Part 5</a>
       </li>
       <li>
-        <a href="geozint6.html" class="text-blue-500 hover:underline">📝 Part 6</a>
+        <a href="geozint6.html" class="text-blue-500 hover:underline">🔍 Part 6</a>
       </li>
       <li>
         <a href="https://blog.ar-lacroix.fr/posts/2025-11-thcon-ctf-2025-geosint-write-up/" class="text-blue-500 hover:underline">📝 Writeup</a>
+      </li>
+      <li>
+        <a href="../" class="text-blue-500 hover:underline">🌐 Why this challenge ?</a>
       </li>
     </ul>
   </div>
