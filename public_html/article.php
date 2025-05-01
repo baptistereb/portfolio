@@ -16,7 +16,7 @@ if (!$article) {
 ?>
 
 <!DOCTYPE html>
-<html lang="fr" id="html-tag">
+<html lang="en" id="html-tag">
 <head>
   <meta charset="UTF-8" />
   <title><?php echo htmlspecialchars($article['title']['fr']); ?> — Baptiste Rébillard</title>
@@ -40,7 +40,7 @@ if (!$article) {
     <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
       <a href="index.php" class="text-xl font-bold hover:underline">← Home</a>
       <div class="flex items-center space-x-4">
-        <button onclick="toggleLang()" class="text-sm hover:underline">🌐 <span id="lang-btn">EN</span></button>
+        <button onclick="toggleLang()" class="text-sm hover:underline">🌐 <span id="lang-btn">EN/FR</span></button>
         <button onclick="toggleTheme()" class="text-sm hover:underline">🌓 <span id="theme-btn">Dark</span></button>
       </div>
     </div>
@@ -54,7 +54,6 @@ if (!$article) {
         <h1 class="text-4xl text-white font-bold drop-shadow-md text-center"
             data-fr="<?php echo htmlspecialchars($article['title']['fr']); ?>"
             data-en="<?php echo htmlspecialchars($article['title']['en']); ?>">
-          <?php echo htmlspecialchars($article['title']['fr']); ?>
         </h1>
       </div>
     </section>
@@ -62,13 +61,11 @@ if (!$article) {
     <p class="text-sm text-gray-500 dark:text-gray-400 mb-10 text-center"
        data-fr="Publié le <?php echo $article['date']; ?>"
        data-en="Published on <?php echo $article['date']; ?>">
-      Publié le <?php echo $article['date']; ?>
     </p>
 
     <article class="prose dark:prose-invert max-w-none prose-lg"
              data-fr="<?php echo htmlspecialchars($article['content']['fr']); ?>"
              data-en="<?php echo htmlspecialchars($article['content']['en']); ?>">
-      <?php echo $article['content']['fr']; ?>
     </article>
   </main>
 
@@ -87,6 +84,20 @@ if (!$article) {
   </footer>
 
   <script>
+    function applyLanguage() {
+      const lang = document.documentElement.lang || "en";
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+      if(lang == "en") {
+        document.getElementById('lang-btn').textContent = "FR";
+      } else if(lang == "fr") {
+        document.getElementById('lang-btn').textContent = "EN";
+      } else {
+        document.getElementById('lang-btn').textContent = "EN/FR";
+      }
+    }
+
     function toggleTheme() {
       const html = document.documentElement;
       html.classList.toggle('dark');
@@ -96,12 +107,13 @@ if (!$article) {
     }
 
     function toggleLang() {
-      const html = document.documentElement;
-      const lang = html.lang === 'fr' ? 'en' : 'fr';
-      html.lang = lang;
-      document.getElementById('lang-btn').textContent = lang.toUpperCase();
+      const currentLang = document.documentElement.lang;
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = newLang;
+      document.getElementById('lang-btn').textContent = currentLang.toUpperCase();
+
       document.querySelectorAll('[data-fr]').forEach(el => {
-        el.innerHTML = el.getAttribute(`data-${lang}`);
+        el.innerHTML = el.getAttribute(`data-${newLang}`);
       });
     }
 
@@ -109,6 +121,7 @@ if (!$article) {
       const isDark = document.documentElement.classList.contains('dark');
       document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
       document.getElementById('lang-btn').textContent = document.documentElement.lang.toUpperCase();
+      applyLanguage();
     });
   </script>
 </body>

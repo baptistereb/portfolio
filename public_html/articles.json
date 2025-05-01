@@ -1,11 +1,63 @@
 [
   {
     "id": 1,
+    "banner": "img/real-intgine.png",
+    "date": "2024-03-19",
+    "title": {
+      "fr": "🎮 Un moteur graphique 3D en JavaScript ?",
+      "en": "🎮 A 3D Graphics Engine in JavaScript ?"
+    },
+    "content": {
+      "fr": "<p>Et si on recodait un moteur graphique 3D… mais <em>from scratch</em>, en JavaScript ? C’est le pari un peu fou que nous avons fait à deux, dans le cadre du Projet Scientifique de 2e année à l’INSA Toulouse. Entre maths, géométrie dans l’espace, galères de debug, et fierté finale : voici un aperçu de <strong>real-intgine</strong>, notre clin d’œil humoristique à l’Unreal Engine, version JS minimaliste.</p><br><h2 class=\"text-3xl font-semibold\">Pourquoi JavaScript ?</h2><br><p>On nous avait proposé Python au départ – c’est accessible, plein de bibliothèques, et pas trop verbeux. Mais on voulait sortir de notre zone de confort. On a tenté le C++… puis vite abandonné : trop de surcouches, trop de complexité. Finalement, JavaScript s’est imposé : un langage qu’on peut faire tourner dans un simple navigateur, parfait pour un rendu graphique rapide avec un canvas HTML5.</p><br><h2 class=\"text-3xl font-semibold\">Le moteur graphique : comment ça marche ?</h2><br><p>Un moteur 3D a pour but de transformer des objets 3D en une image 2D, projetée depuis un point de vue donné (la caméra). En théorie : simple. En pratique : quelques centaines de lignes de code et de matrices de rotation.</p><h3>1. Modéliser la caméra et l’écran</h3><p>La position de la caméra, ainsi que son angle de vue (haut/bas, gauche/droite) servent à calculer dynamiquement la position de l’écran (le plan sur lequel on projette les objets 3D). On gère cela via une <em>field of view</em> (fov), et des transformations trigonométriques.</p><h3>2. Transformer les points</h3><p>Chaque point d’un objet est d’abord <em>centré</em> sur la caméra (on soustrait la position de la caméra), puis on applique deux matrices de rotation (autour des axes X et Z) pour simuler le point de vue du spectateur.</p><h3>3. Projection perspective</h3><p>Une fois les points transformés, on utilise une projection en perspective pour les « aplatir » sur l’écran. Contrairement à une projection orthogonale, elle donne cette illusion de profondeur si importante pour un rendu réaliste.</p><h3>4. Affichage des faces dans le bon ordre</h3><p>Afficher une face, c’est relier trois points projetés sur l’écran. Mais si on les affiche dans un ordre aléatoire, des faces lointaines risquent de passer par-dessus les faces proches. Pour éviter ça, on calcule la distance de chaque face à la caméra (via le centre de la face), et on trie la liste avant d’afficher.</p><br><h2 class=\"text-3xl font-semibold\">Les limitations (et ce qu’on a appris)</h2><br><ul><li>🛑 <strong>Pas d’ombres</strong>, pas de textures, pas de Z-buffer. On a pris des raccourcis, comme l’utilisation de la méthode <code>fill()</code> pour dessiner les faces.</li><li>🕳️ Notre tri par distance au centre des faces est naïf. Il marche dans 90&nbsp;% des cas… mais génère des bugs visuels dès que les faces sont grandes.</li><li>🧠 En contrepartie, on a compris l’essence même d’un moteur 3D. Matrices de rotation, projections, tri des faces… Ce n’est plus une boîte noire.</li></ul><br><h2 class=\"text-3xl font-semibold\">Bilan</h2><br><p>Créer un mini moteur 3D en JavaScript, c’est possible. C’est même incroyablement formateur. Avec <strong>real-intgine</strong>, on ne joue pas (encore) à des FPS photoréalistes, mais on explore, on apprend, et on visualise l’impact direct des mathématiques sur le rendu visuel.</p><p>On est fiers d’avoir monté ce projet, même avec ses imperfections. C’est un peu notre « Hello World » du moteur graphique. Et pourquoi pas une v2, avec un vrai rendu lumière ou du WebGL ?</p><p>👉 <a href=\"real-intgine\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Démo en ligne</a><br>👉 <a href=\"https://github.com/baptistereb/real-intgine\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Code source sur GitHub</a></p>",
+      "en": "<p>What if we could rebuild a 3D graphics engine… <em>from scratch</em>, in JavaScript? That’s the ambitious challenge we tackled as a team of two during our second-year Scientific Project at INSA Toulouse. Between math, geometry, debugging chaos, and final pride, here’s a glimpse of <strong>real-intgine</strong>, our tongue-in-cheek nod to Unreal Engine — but minimal and homebrewed in JS.</p><br><h2 class=\"text-3xl font-semibold\">Why JavaScript?</h2><br><p>We were advised to use Python — it’s accessible, rich in libraries, and beginner-friendly. But we wanted something different. After briefly trying C++ and facing its complexity, JavaScript stood out: it runs in the browser, doesn’t require installation, and lets us draw directly using an HTML5 canvas.</p><br><h2 class=\"text-3xl font-semibold\">How the graphics engine works</h2><br><p>A 3D engine transforms 3D object data into a 2D projection, based on a virtual camera’s viewpoint. Sounds simple… until you try coding it. We needed to dive into 3D math, projection geometry, and frame-by-frame rendering.</p><h3>1. Modeling the camera and the screen</h3><p>The camera’s position and orientation determine where the virtual screen (projection plane) is placed. Using trigonometry and a <em>field of view</em> (fov) parameter, we dynamically calculate this screen on each frame.</p><h3>2. Transforming the points</h3><p>Each 3D vertex is first translated relative to the camera, then rotated around X and Z axes (Euler angles) to simulate the camera’s orientation in space.</p><h3>3. Perspective projection</h3><p>We apply a perspective projection — which flattens 3D space while preserving depth — to make distant objects look smaller and closer ones larger, giving a realistic visual depth.</p><h3>4. Face sorting</h3><p>Each triangle (face) must be drawn in the correct order to avoid visual glitches. We sort faces based on the distance between their center and the camera, ensuring that farther faces are drawn first.</p><br><h2 class=\"text-3xl font-semibold\">Limitations (and what we learned)</h2><br><ul><li>🛑 <strong>No lighting</strong>, no textures, no Z-buffer. We used the simple <code>fill()</code> method to color faces, which can result in inaccuracies and hidden face issues.</li><li>🕳️ Our face-sorting method is based on center distance, which breaks when faces are large or oddly shaped.</li><li>🧠 But we now understand how 3D rendering truly works: rotations, projections, rendering loops — it’s no longer a black box.</li></ul><br><h2 class=\"text-3xl font-semibold\">Conclusion</h2><br><p>Building a tiny 3D engine in JavaScript is totally doable — and incredibly educational. With <strong>real-intgine</strong>, we’re not playing photorealistic games (yet), but we’ve built a real-time, functional engine from first principles.</p><p>We’re proud of what we achieved. And who knows? Maybe a future version will include lighting, shadows, or even WebGL acceleration.</p><p>👉 <a href=\"real-intgine\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Live Demo</a><br>👉 <a href=\"https://github.com/baptistereb/real-intgine\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Source code on GitHub</a></p>"
+    }
+  },
+  {
+    "id": 2,
+    "banner": "img/",
+    "date": "2024-03-19",
+    "title": {
+      "fr": "",
+      "en": ""
+    },
+    "content": {
+      "fr": "Développer un jeux en ligne multijoueurs temps réel avec un websocket",
+      "en": ""
+    }
+  },
+  {
+    "id": 3,
+    "banner": "img/",
+    "date": "2024-03-19",
+    "title": {
+      "fr": "",
+      "en": ""
+    },
+    "content": {
+      "fr": "Retour & Writeup : l'OXYHACK 2024 (ou comment gagner un CTF)",
+      "en": ""
+    }
+  },
+  {
+    "id": 4,
+    "banner": "img/",
+    "date": "2024-03-19",
+    "title": {
+      "fr": "",
+      "en": ""
+    },
+    "content": {
+      "fr": "INSA GAME SHOW 2025 : comment organiser une LAN ?",
+      "en": ""
+    }
+  },
+  {
+    "id": 5,
     "banner": "img/thcon.jpg",
     "date": "2025-05-01",
     "title": {
-      "fr": "Retour sur la THCon 2025 : une aventure enrichissante",
-      "en": "Looking Back at THCon 2025: An Enriching Experience"
+      "fr": "🎤 Retour sur la THCon 2025 : une aventure enrichissante",
+      "en": "🎤 Looking Back at THCon 2025: An Enriching Experience"
     },
     "content": {
       "fr": "<p>La <strong>Toulouse Hacking Convention (THCon)</strong> est un événement annuel majeur dédié à la cybersécurité, réunissant chercheurs, professionnels et passionnés. Depuis sa création en 2017, la THCon s'est imposée comme un rendez-vous incontournable pour la communauté infosec en Occitanie et au-delà.</p><br><br><h2 class=\"text-3xl font-semibold\">Une programmation riche et diversifiée</h2><br><br><p>L'édition 2025 s'est tenue les 10 et 11 avril à l'auditorium Marthe Condat de l'Université Paul Sabatier, suivie le 12 avril par une journée de <strong>Capture The Flag (CTF)</strong> à l'ENSEEIHT. Les conférences ont abordé des sujets tels que : la sécurité des réseaux, l'exploitation des émissions modulées, les attaques par déni de service (DoS) ou encore la sécurité des chaînes d'approvisionnement dans Kubernetes.</p><br><br><h2 class=\"text-3xl font-semibold\">Mon rôle à la THCon2025 : de la conception à la réalisation</h2><br><br><p>Depuis octobre 2024, j'ai eu l'opportunité de m'investir pleinement dans l'organisation de la THCon2025, en occupant plusieurs rôles clés :</p><br><br><ul><br>  <li><strong>Responsable du site internet</strong> : J'ai pris en charge la gestion du site officiel de l'événement, <a href=\"https://thcon.party\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\">https://thcon.party</a>, en collaboration avec l'équipe organisatrice.</li><br>  <li><strong>Création du challenge \"Gunnar's Vacation\"</strong> : Avec mon collègue <strong>Lacroix Raphaël (alias Chepycou)</strong>, nous avons conçu le challenge \"Gunnar's Vacation\", un défi de géoint. Une version du challenge si vous souhaitez le consulter est disponible ici : <a href=\"gunnars_vacation\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Voir Gunnar's Vacation 🚀</a>. </li></ul><br><br><p>Cette première édition de la THCon a été une expérience incroyablement formatrice, et je prévois déjà de me réinvestir l’année prochaine, peut-être même au sein du bureau pour prendre encore plus d’initiatives.</p>",
