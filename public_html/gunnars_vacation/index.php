@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="vwport" content="width=device-width, initial-scale=1.0" />
+
   <title>Gunnar's vacation</title>
+  <meta name="description" content="Gunnar's Vacation" />
 
   <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
