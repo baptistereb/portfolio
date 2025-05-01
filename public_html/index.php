@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baptiste Rébillard</title>
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+  <meta property="og:title" content="Baptiste Rébillard" />
+  <meta property="og:description" content="Website / Site internet - Baptiste Rébillard" />
+  <meta property="og:image" content="https://baptiste-reb.fr/img/profil.JPG" />
+  <meta property="og:type" content="website" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if (localStorage.getItem('theme') === 'dark') {

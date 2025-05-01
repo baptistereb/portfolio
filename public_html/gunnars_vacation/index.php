@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="vwport" content="width=device-width, initial-scale=1.0" />
   <title>Gunnar's vacation</title>
+
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+
+  <meta property="og:title" content="Baptiste Rébillard" />
+  <meta property="og:description" content="Gunnar's Vacation" />
+  <meta property="og:image" content="https://baptiste-reb.fr/showoff/gunnars.png" />
+  <meta property="og:type" content="website" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
@@ -33,7 +43,7 @@
         <a href="https://blog.ar-lacroix.fr/posts/2025-11-thcon-ctf-2025-geosint-write-up/" class="text-blue-500 hover:underline">📝 Writeup</a>
       </li>
       <li>
-        <a href="../" class="text-blue-500 hover:underline">🌐 Why this challenge ?</a>
+        <a href="../article.php?id=4" class="text-blue-500 hover:underline">🌐 Why this challenge ?</a>
       </li>
     </ul>
   </div>

@@ -22,6 +22,19 @@ if (!$article) {
   <title><?php echo htmlspecialchars($article['title']['fr']); ?> — Baptiste Rébillard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<?php echo htmlspecialchars(mb_strimwidth(strip_tags($article['content']['fr']), 0, 200, '...')); ?>" />
+  <meta property="og:description" content="Découvrez comment créer et gérer des mots de passe sûrs en 2025." />
+  <meta property="og:image" content="https://baptiste-reb.fr/<?= htmlspecialchars($article['banner']); ?>" />
+  <meta property="og:url" content="https://baptiste-reb.fr/article.php?id=<?= $article['id']; ?>" />
+  <meta property="og:site_name" content="CyberBlog" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="article:author" content="https://baptiste-reb.fr" />
+
   <script>
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -118,7 +131,7 @@ if (!$article) {
         el.innerHTML = el.getAttribute(`data-${newLang}`);
       });
     }
-    
+
     window.addEventListener('DOMContentLoaded', () => {
       // Appliquer le thème
       const isDark = document.documentElement.classList.contains('dark');
