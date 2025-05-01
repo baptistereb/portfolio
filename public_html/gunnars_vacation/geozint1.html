@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="src/bootstrap.min.css">
+  <link rel="stylesheet" href="src/leaflet.css" />
+  <!--  Dimitri/Network-Walker here, I must say I am vewy proud of my Ai girlf - I mean project. Glad0s is so greatly implemented that I can't help but spend my time talking to her  -->
+  <style>
+
+    @font-face {
+        font-family: 'Gang';
+        src: url('font/gang.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    body {
+      font-family: 'Gang', monospace;
+    }
+
+    /* HUD Container */
+    .hud-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Allows clicking through the HUD */
+        z-index: 42;
+    }
+
+    /* Corner Frames */
+    .hud-corner {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 2px solid #660033;
+        opacity: 0.7;
+        animation: pulse 2s infinite;
+    }
+
+    .top-left {
+        top: 20px;
+        left: 20px;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .top-right {
+        top: 20px;
+        right: 20px;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    .bottom-left {
+        bottom: 20px;
+        left: 20px;
+        border-right: none;
+        border-top: none;
+    }
+
+    .bottom-right {
+        bottom: 20px;
+        right: 20px;
+        border-left: none;
+        border-top: none;
+    }
+
+    .hud-data {
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 1.5;
+        text-shadow: 0 0 5px rgba(102, 0, 51, 0.5);
+    }
+
+    /* Scanner Line */
+    .scanner {
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(to right, #66003344, #660033, #66003344);
+        animation: scan 4s infinite;
+        opacity: 0.5;
+    }
+
+    /* Status Bars */
+    .status-bar {
+        position: absolute;
+        bottom: 140px;
+        left: 20px;
+        width: 200px;
+        height: 20px;
+        background: rgba(0, 20, 40, 0.6);
+        border: 2px solid rgb(102, 0, 51);
+        overflow: hidden;
+    }
+
+    .bar-fill {
+        height: 100%;
+        background: #660033;
+        animation: energy 7s infinite;
+        box-shadow: 0 0 10px #660033;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+        0% { opacity: 0.7; }
+        50% { opacity: 0.4; }
+        100% { opacity: 0.7; }
+    }
+
+    @keyframes scan {
+        0% { top: 0; }
+        50% { top: 100%; }
+        100% { top: 0; }
+    }
+
+    @keyframes energy {
+        0% { width: 20%; }
+        50% { width: 80%; }
+        100% { width: 20%; }
+    }
+
+    #picker {
+      user-select: none;
+    }
+
+    /* Data Panel */
+    .hud-panel {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      background: rgba(0, 20, 40, 0.6);
+      border: 1px solid #660033;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(102, 0, 51, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    #locationPicker {
+      z-index: 4242;
+      height: 30vh;
+      width: 35vw;
+    }
+
+    .a-enter-vr-button{
+      width : 100px;
+    }
+
+    #infos {
+      position: fixed;
+      background-color: black;
+      height: 30px;
+      width: 35vw;
+      z-index: 424242;
+      color: #9f0062;
+    }
+
+    #infos p {
+      display: inline-block;
+      margin: 5px;
+    }
+
+    #submit {
+      display: inline-block;
+      background-color: #660033;
+      color: #cccccc;
+      height: 30px;
+      border: 0;
+      float: right;
+      padding-left : 15px;
+      padding-right : 15px;
+    }
+
+    #submit:hover {
+      background-color: rgba(0,255,0,0.6);
+    }
+
+    a-scene {
+      z-index:1;
+    }
+
+    #logo {
+      user-select: none;
+      position: fixed;
+      height: 100px;
+      width: 100px;
+      left:20px;
+      bottom:20px;
+      z-index: 42;
+    }
+
+    #text_picker {
+      color: white;
+      user-select: text;
+    }
+  </style>
+
+<!-- That's it I'm having an overdose of https://www.youtube.com/watch?v=Kh8nknskGow It's been played around all day. And together with those damn swities they are going to break my head-->
+
+  <script src="src/jquery-1.11.3.min.js"></script>
+  <script src="src/leaflet.js"></script>
+  <script src="src/OSMLocationPicker.js"></script>
+  <script src="src/aframe.min.js"></script>
+
+<!--  Gideon 's been doing some painting lately ... I mean, hello there ? Did you know we're waging war against the Aurora Initiative ? Are you SURE that you need to reproduce the logo of the THBank oil on canvas ? I mean look at that : src/images/painting.png -->
+
+  <script>
+    $(document).ready(function(){
+      OSMPICKER.initmappicker(43.570645855738995, 1.4669175446033478, 20, null);
+
+      let latitude = 43.570645855738995
+      let longitude = 1.4669175446033478
+      
+      function getRandomItem(list) {
+        let audioId = Math.floor((Math.random()*list.length))
+        console.log(audioId, list[audioId]);
+        return [audioId, list[audioId]];
+      }
+
+      function playRandomGladosQuote(){
+        texts = [
+          "My grandma would have done better using her minitel, and she's dead",
+          "My grandma would have done better using her atlas",
+          "Don't you want to put Antarctica, while you're at it?",
+          "You're almost there... nah, just kidding!",
+          "I get it now ! We're not in the same frame of reference",
+          "Did you at least aim for Earth, or are you looking at Mars?",
+          "You'd be closer to the truth if you rolled a 20-sided die.",
+          "I knew it was far, but not that far...",
+          "Even a carrier pigeon would have been more accurate.",
+          "You took a wild guess... and still missed the map.",
+          "At that level, you might as well close your eyes and click.",
+          "Have you ever seen a globe before, or is this a first?",
+          "Your sense of direction scares me.",
+          "You're so far away that Maps refuses to recalculate.",
+          "Well, at least you were on the right planet, that's something.",
+          "Where did you point? In your imagination?",
+          "If it was a dart throw, you'd have hit the wall.",
+          "I hope you don't have a driver's license, because that's worrying.",
+          "Even a dolphin with a globe would do better.",
+          "I knew it was wrong, but not *that* wrong...",
+          "It's not a ping, it's a cry for help!",
+          "You aimed wide... very wide.",
+          "Trying out bad strategies intentionally is healthy empiricism. That IS what you are doing, right?"
+        ]
+
+        let [audioId, text] = getRandomItem(texts);
+        console.log(audioId, text)
+        document.getElementById('text_picker').textContent = text;
+        var audio = new Audio('src/audio/'+ audioId.toString() +'.wav');
+        audio.play();
+
+      }
+
+      document.addEventListener('myCustomEvent', function(e) {
+        longitude = e.detail.lon
+        latitude = e.detail.lat
+        console.log('latitude et longitude :', [e.detail.lat, e.detail.lon])
+      })
+
+      let button = document.getElementById('submit')
+
+      button.addEventListener('click', function() {
+        let url = `endpoint.php?challId=1&lat=${latitude}&lon=${longitude}`
+
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok')
+            }
+            return response.text();
+          })
+          .then(data => {
+            if (data === "Essaye encore !") {
+              playRandomGladosQuote()
+            } else {
+              document.getElementById('text_picker').textContent = "You succeded !!! ... I mean, that was still very pathetic : " + data
+              var audio = new Audio('src/audio/win.wav');
+              audio.play();
+            }
+          })
+          .catch(error => {
+            console.error('Impossible de se connecter au serveur : ', error)
+            document.getElementById('text_picker').textContent = "Error, Please check with admins"
+            alert("Error, Please reach out to the CTF's organizers")
+          })
+      })
+
+    })
+  </script>
+</head>
+
+<!-- Damn I spilled some cofee on the keyboanfnsidjfncjdndjdnsldjfnsldnf -->
+
+<body>
+
+  <div class="hud-container">
+    <!-- Corner Frames -->
+    <div class="hud-corner top-left"></div>
+    <div class="hud-corner top-right"></div>
+    <div class="hud-corner bottom-left"></div>
+    <div class="hud-corner bottom-right"></div>
+
+    <!-- Scanner Line -->
+    <div class="scanner"></div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="bar-fill"></div>
+    </div>
+</div>
+
+  <div id="picker">
+    <div id="infos" class="hud-panel">
+      <p id="text_picker">Select the location (+/- 20m)</p>
+      <button id="submit">Send</button>
+    </div>
+    <div id="locationPicker" class="hud-panel"></div>
+  </div>
+
+  <a-scene>
+      <a-sky src="src/views/1.jpg"></a-sky>
+  </a-scene>
+
+  <img id="logo" src="src/images/logo.png">
+</body>
+</html>

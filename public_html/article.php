@@ -1,0 +1,115 @@
+<?php
+$articles = json_decode(file_get_contents('articles.json'), true);
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$article = null;
+foreach ($articles as $a) {
+    if ($a['id'] === $id) {
+        $article = $a;
+        break;
+    }
+}
+if (!$article) {
+    http_response_code(404);
+    echo "Article not found.";
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+  <meta charset="UTF-8" />
+  <title><?php echo htmlspecialchars($article['title']['fr']); ?> — Baptiste Rébillard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300 font-sans">
+
+  <header class="bg-gray-100 dark:bg-gray-800 shadow">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.php" class="text-xl font-bold hover:underline">← Home</a>
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleLang()" class="text-sm hover:underline">🌐 <span id="lang-btn">EN</span></button>
+        <button onclick="toggleTheme()" class="text-sm hover:underline">🌓 <span id="theme-btn">Dark</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <section class="relative h-64 w-full rounded-lg overflow-hidden mb-12">
+      <img src="<?php echo htmlspecialchars($article['banner']); ?>" alt="Bannière"
+           class="w-full h-full object-cover brightness-75 dark:brightness-50">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-4xl text-white font-bold drop-shadow-md text-center"
+            data-fr="<?php echo htmlspecialchars($article['title']['fr']); ?>"
+            data-en="<?php echo htmlspecialchars($article['title']['en']); ?>">
+          <?php echo htmlspecialchars($article['title']['fr']); ?>
+        </h1>
+      </div>
+    </section>
+
+    <p class="text-sm text-gray-500 dark:text-gray-400 mb-10 text-center"
+       data-fr="Publié le <?php echo $article['date']; ?>"
+       data-en="Published on <?php echo $article['date']; ?>">
+      Publié le <?php echo $article['date']; ?>
+    </p>
+
+    <article class="prose dark:prose-invert max-w-none prose-lg"
+             data-fr="<?php echo htmlspecialchars($article['content']['fr']); ?>"
+             data-en="<?php echo htmlspecialchars($article['content']['en']); ?>">
+      <?php echo $article['content']['fr']; ?>
+    </article>
+  </main>
+
+  <footer class="bg-gray-100 dark:bg-gray-800 mt-16 py-8">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <p class="mb-4 text-lg" data-fr="N'hésite pas à me contacter 👇" data-en="Feel free to reach out 👇">
+        N'hésite pas à me contacter 👇
+      </p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:ton.mail@example.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">📧 Email</a>
+        <a href="https://linkedin.com/in/ton-profil" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">🔗 LinkedIn</a>
+        <a href="https://github.com/ton-github" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">💻 GitHub</a>
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-6">&copy; 2025 Baptiste Rébillard</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
+    }
+
+    function toggleLang() {
+      const html = document.documentElement;
+      const lang = html.lang === 'fr' ? 'en' : 'fr';
+      html.lang = lang;
+      document.getElementById('lang-btn').textContent = lang.toUpperCase();
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
+      document.getElementById('lang-btn').textContent = document.documentElement.lang.toUpperCase();
+    });
+  </script>
+</body>
+</html>

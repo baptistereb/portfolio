@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 1024 1024"
+   class="icon"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="marker.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ff0033;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#660033;stop-opacity:1;"
+         offset="0.51669031"
+         id="stop1" />
+      <stop
+         style="stop-color:#2b0518;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="320.02072"
+       y1="283.20807"
+       x2="703.97925"
+       y2="740.79199"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.87595323,0,0,1,26.463312,0)" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.05375"
+     inkscape:cx="399.5255"
+     inkscape:cy="400"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 474.95136,85.333333 C 330.46346,85.333333 213.33333,219.072 213.33333,384 c 0,164.94933 261.61803,554.66667 261.61803,554.66667 0,0 261.61804,-389.71734 261.61804,-554.66667 0,-164.928 -117.13013,-298.666667 -261.61804,-298.666667 z m 0,447.999997 a 130.80901,149.33333 0 1 1 0,-298.66666 130.80901,149.33333 0 0 1 0,298.66666 z"
+     fill="#FF3D00"
+     id="path1"
+     style="fill:url(#linearGradient2);stroke-width:0.935923"
+     inkscape:export-filename="marker-icon-2x.png"
+     inkscape:export-xdpi="11.742311"
+     inkscape:export-ydpi="11.742311" />
+</svg>

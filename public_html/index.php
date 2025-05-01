@@ -1,226 +1,121 @@
-<?php
-$fr = ["fr", "Français", "English", "Accueil", "Projets en cours", "Compétences", "Contact", "Etudiant à l'INSA Toulouse, développeur web", "Amoureux des imprimantes 3D, de programmation et plus globalement des nouvelles technologies (communement appelé : nerd)"/*<br>Egalement conseiller en systèmes et logiciels informatiques ^^ (oui oui APE 62.02A)"*/, "Me contacter", "Retourner à la page d'accueil", "Tous droits réservés", "Anciens projets", "Erreur 404", "Bientôt disponible", "Anciens projets", "Site de la semaine d'accueil de l'INSA Toulouse", "MyEntireLife", "Calculer une distance de levenshtein (inutile)", "thumbsgenerator (script bash récursif pour faire des thumbs)", "micasend (chat dans le terminal en bash/php)", "php2ics (permet de générer des calendriers en php)", "systeme cryptographique McEliece (résistant au post quantique) en C", "Moteur graphique 3D from scratch en JS", "Moteur 3D en C", "php2latex (permet de générer des pdf LaTeX en php)", "Site de l'Amicale (BDE INSA Toulouse)"];
-
-
-$en = ["en", "English", "Français", "Home", "Current projects", "Skills", "Contact", "Student at INSA Toulouse, web developer", "Lover of 3D printers, programming and more generally of new technologies (commonly called : a nerd)", "Contact me", "Back to homepage", "All rights reserved", "Latest projects", "404 Not found", "Coming soon !", "Latest projects", "INSA Toulouse welcome week website", "MyEntireLife", "Calculate a levenshtein distance (useless)", "thumbsgenerator (recursive thumbs generator in bash)", "micasend (terminal chat in bash/php)", "php2ics (allows you to create calendar file using php)", "McEliece cryptosystem (post-quantum resistant) in C", "3D graphics engine from scratch in JS", "3D graphics engine in C", "php2latex (allows you to create pdf with LaTeX in php)", "Website of the Amicale (INSA Toulouse students' association)"];
-
-function index() {
-	header('Location: #');
-}
-
-if(isset($_COOKIE['language'])) {
-	if($_COOKIE['language'] == "fr") {
-		$v = $fr;
-	} else {
-		$v = $en;
-	}
-} else {
-	setcookie("language", "en");
-	index();
-}
-
-
-if(isset($_POST['language'])) {
-	if($v['0'] == "en") {
-		setcookie("language", "fr");
-		index();
-	} else {
-		setcookie("language", "en");
-		index();
-	}
-}
-
-if(isset($_COOKIE['hexa'])) {
-	if($_COOKIE['hexa'] == "true") {
-		for($i=0; $i<count($v);$i++) {
-			$v[$i] = "0x".bin2hex($v[$i]);
-		}
-	}
-} else {
-	setcookie("hexa", "false");
-	index();
-}
-
-if(isset($_POST['hexa'])) {
-	if($_COOKIE['hexa'] == "false") {
-		setcookie("hexa", "true");
-		index();
-	} else {
-		setcookie("hexa", "false");
-		index();
-	}
-}
-?>
 <!DOCTYPE html>
-<html lang="<?= $v[0] ?>">
+<html lang="fr" id="html-tag">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>&ltBR&gt - <?= $v[1] ?></title>
-	<link rel="stylesheet" type="text/css" href="css/all.css" />
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<link rel="stylesheet" type="text/css" href="css/project.css" />
-	<link rel="stylesheet" type="text/css" href="css/link.css" />
-	<link rel="stylesheet" type="text/css" href="css/skill.css" />
-	<link rel="stylesheet" type="text/css" href="css/contact.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baptiste Rébillard — Site personnel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
 </head>
-<body>
-<section class="background" id="index">
-	<header>
-		<nav>
-			<ul>
-				<form method="POST" class="language_form">
-					<input type="submit" value="<?=$v[2];?>" name="language" class="menubutton">
-					<input type="submit" value="<?php if($_COOKIE['hexa'] == "true") { echo "Hexa : ON"; } else { echo "Hexa : OFF"; } ?>" name="hexa" class="menubutton">
-				</form>
-				<a href="#index">
-					<li class="button"><?= $v[3] ?></li>
-				</a>
-				<a href="#project">
-					<li class="button"><?= $v[4] ?></li>
-				</a>
-				<a href="#link">
-					<li class="button"><?= $v[12] ?></li>
-				</a>
-				<a href="#skill">
-					<li class="button"><?= $v[5] ?></li>
-				</a>
-				<a href="#contact">
-					<li class="contact_button">
-					<?= $v[6] ?>
-					<div id="arrow-right"></div>
-				</li></a>
-			</ul>				
-		</nav>
-	</header>
+<body class="bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300 font-sans">
 
-	<div id="description">
-		<img src="img/profil.JPG" class="img_profil">
-		<div class="title">Baptiste Rébillard &ltBR&gt</div>
-		<div class="under_title"><?= $v['7'] ?></div>
-		<br><br>
-		<div class="under_title"><?= $v['8'] ?></div>
-	</div>
+  <header class="bg-gray-100 dark:bg-gray-800 shadow">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Baptiste Rébillard</h1>
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleLang()" class="text-sm hover:underline">🌐 <span id="lang-btn">EN</span></button>
+        <button onclick="toggleTheme()" class="text-sm hover:underline">🌓 <span id="theme-btn">Dark</span></button>
+      </div>
+    </div>
+  </header>
 
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-</section>
-<section class="project" id="project">
-	<div id="box-middle">
-		<h1><?= $v[4] ?></h1>
-		<a href="https://amicale-insat.fr" target="_link" class="button_blue">
-			<?= $v[26] ?>
-		</a>
-		<a href="https://github.com/baptistereb/McEliece" target="_link" class="button_blue">
-			<?= $v[22] ?>
-		</a>
-		<a href="https://github.com/baptistereb/real-intgine-c" target="_link" class="button_blue">
-			<?= $v[24] ?>
-		</a>
-	</div>
-</section>
-<section class="link" id="link">
-	<div id="box-middle">
-		<h1><?= $v[15] ?></h1>
-		<a href="https://github.com/baptistereb/php2latex" target="_link" class="button_blue">
-			<?= $v[25] ?>
-		</a>
-		<a href="https://real-intgine.insat.fr" target="_link" class="button_blue">
-			<?= $v[23] ?>
-		</a>
-		<a href="https://github.com/baptistereb/php2ics" target="_link" class="button_blue">
-			<?= $v[21] ?>
-		</a>
-		<a href="https://github.com/baptistereb/thumbs-generator" target="_link" class="button_blue">
-			<?= $v[19] ?>
-		</a>
-		<a href="https://github.com/baptistereb/micasend" target="_link" class="button_blue">
-			<?= $v[20] ?>
-		</a>
-		<a href="https://accueil.insat.fr" target="_link" class="button_blue">
-			<?= $v[16] ?>
-		</a>
-		<a href="myentirelife.php" target="_link" class="button_blue">
-			<?= $v[17] ?>
-		</a>
-		<!--<a href="levenshtein.php" target="_link" class="button_blue">
-			< $v[18]; ?>
-		</a>-->
-	</div>
-</section>
-<section class="skill" id="skill">
-	<?php if($_COOKIE['language'] == "fr") { ?>
-		<embed src="./baptistereb_fr.pdf" class="cv" type="application/pdf"/>
-	<?php } else { ?>
-		<embed src="./baptistereb_en.pdf" class="cv" type="application/pdf"/>
-	<?php } ?> 	
-</section>
-<section class="contact" id="contact" style="text-align:center;">
-	<div class="title-contact"><?= $v['9'] ?></div>
+  <section class="max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:space-x-10">
+    <img src="img/profil.JPG" alt="Photo de profil" class="w-40 h-40 rounded-full object-cover shadow-lg mb-6 md:mb-0">
+    <div>
+      <h2 class="text-3xl font-bold mb-2" data-fr="Salut, moi c’est Baptiste 👋" data-en="Hi, I'm Baptiste 👋">Salut, moi c’est Baptiste 👋</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-4" data-fr="Étudiant en informatique, passionné par la cybersécurité, l'impression 3D et les projets libres." data-en="Computer science student, passionate about cybersecurity, 3D printing, and open-source projects.">Étudiant en informatique, passionné par la cybersécurité, l'impression 3D et les projets libres</p>
+      <!--<a href="#articles" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline" data-fr="Voir mes derniers articles →" data-en="See my latest articles →">Voir mes derniers articles →</a>-->
+    </div>
+  </section>
 
-	<div id="center_perfect">
-		<a href="mailto:baptiste.rebillard@protonmail.com" class="a-button">
-			<img src="img/mail.svg" class="title-button">
-			<div class="content">
-				<div class="table">
-					<div class="cell">baptiste.rebillard@protonmail.com</div>
-				</div>
-			</div>
-		</a>
+  <!-- Articles -->
+  <section id="articles" class="bg-gray-50 dark:bg-gray-800 py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <h3 class="text-2xl font-bold mb-6" data-fr="Articles récents" data-en="Latest articles">Articles récents</h3>
+      <div class="grid gap-6 md:grid-cols-2" id="article-list">
+        <!-- Les articles seront insérés ici via JavaScript -->
+      </div>
+    </div>
+  </section>
 
-		<a href="https://www.linkedin.com/in/baptistereb/" target="_linkedin" class="a-button">
-			<img src="img/linkedin.svg" class="title-button">
-			<div class="content">
-				<div class="table">
-					<div class="cell">linkedin.com/in/baptistereb</div>
-				</div>
-			</div>
-		</a>
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-100 dark:bg-gray-800 mt-16 py-8">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <p class="mb-4 text-center text-lg" data-fr="N'hésite pas à me contacter 👇" data-en="Feel free to reach out 👇">N'hésite pas à me contacter 👇</p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:baptiste.rebillard@protonmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">📧 Email</a>
+        <a href="https://www.linkedin.com/in/baptistereb/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">🔗 LinkedIn</a>
+        <a href="https://github.com/baptistereb/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">💻 GitHub</a>
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-6">&copy; 2025 Baptiste Rébillard</p>
+    </div>
+  </footer>
 
-		<a href="https://github.com/baptistereb" target="_github" class="a-button">
-			<img src="img/git.svg" class="title-button">
-			<div class="content">
-				<div class="table">
-					<div class="cell">github.com/baptistereb</div>
-				</div>
-			</div>
-		</a>
-	</div>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
+    }
 
-	<a href="#index" class="back-home">
-		<li class="up">
-			<div id="arrow-top"></div>
-			<div id="text-top"><?= $v[10] ?></div>
-		</li>
-	</a>
+    function toggleLang() {
+      const currentLang = document.documentElement.lang;
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = newLang;
+      document.getElementById('lang-btn').textContent = newLang.toUpperCase();
 
-	<div id="copyright">
-		<span>Copyright © 2024 - Rébillard Baptiste - <?= $v['11'] ?></span>
-	</div>
-</section>
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = el.getAttribute(`data-${newLang}`);
+      });
+    }
 
+    function loadArticles() {
+      fetch('articles.json')
+        .then(response => response.json())
+        .then(articles => {
+          const articleList = document.getElementById('article-list');
+          articles.forEach(article => {
+            const articleElement = document.createElement('a');
+            articleElement.href = `article.php?id=${article.id}`;
+            articleElement.className = 'block p-6 bg-white dark:bg-gray-700 rounded-xl shadow hover:shadow-lg transition';
+
+            articleElement.innerHTML = `
+              <h4 class="text-xl font-semibold mb-2" data-fr="${article.title.fr}" data-en="${article.title.en}">${article.title.fr}</h4>
+              <p class="text-gray-600 dark:text-gray-300" data-fr="${article.content.fr.substring(0, 100)}..." data-en="${article.content.en.substring(0, 100)}..."></p>
+              <span class="text-sm text-blue-600 dark:text-blue-400 mt-2 inline-block" data-fr="Lire l’article →" data-en="Read article →">Lire l’article →</span>
+            `;
+            articleList.appendChild(articleElement);
+          });
+        })
+        .catch(error => console.error('Error loading articles:', error));
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadArticles();
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('theme-btn').textContent = isDark ? 'Light' : 'Dark';
+      document.getElementById('lang-btn').textContent = document.documentElement.lang.toUpperCase();
+    });
+
+    window.addEventListener('load', () => {
+    	document.querySelectorAll('[data-fr]').forEach(el => {
+        	el.innerHTML = el.getAttribute(`data-${document.documentElement.lang}`);
+      	});
+    })
+  </script>
 </body>
 </html>
