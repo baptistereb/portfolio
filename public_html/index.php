@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baptiste Rébillard — Site personnel</title>
+  <title>Baptiste Rébillard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if (localStorage.getItem('theme') === 'dark') {
