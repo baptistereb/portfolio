@@ -12,7 +12,7 @@
 
   <meta property="og:title" content="Baptiste Rébillard" />
   <meta property="og:description" content="Website / Site internet - Baptiste Rébillard" />
-  <meta property="og:image" content="https://baptiste-reb.fr/img/profil.JPG" />
+  <meta property="og:image" content="https://baptiste-reb.fr/img/profil.png" />
   <meta property="og:type" content="website" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +43,7 @@
   </header>
 
   <section class="max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center md:space-x-10">
-    <img src="img/profil.JPG" alt="Photo de profil" class="w-40 h-40 rounded-full object-cover shadow-lg mb-6 md:mb-0">
+    <img src="img/profil.png" alt="Photo de profil" class="w-40 h-40 rounded-full object-cover shadow-lg mb-6 md:mb-0">
     <div>
       <h2 class="text-3xl font-bold mb-2" data-fr="Salut, moi c’est Baptiste 👋" data-en="Hi, I'm Baptiste 👋"></h2>
       <p class="text-gray-700 dark:text-gray-300 mb-4" data-fr="Étudiant en informatique, passionné par la cybersécurité, l'impression 3D et les projets libres." data-en="Computer science student, passionate about cybersecurity, 3D printing, and open-source projects."></p>
