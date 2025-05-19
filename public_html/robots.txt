@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /img/
+Disallow: /articles/
+Disallow: /showoff/
+
+Allow: /index.php
+Allow: /article.php
+Allow: /gunnars_vacation/
+Allow: /real-intgine/
+
+Sitemap: https://baptiste-reb.fr/sitemap.xml
