@@ -3,6 +3,7 @@ Disallow: /img/
 Disallow: /articles/
 Disallow: /showoff/
 
+Allow: sitemap.xml
 Allow: /index.php
 Allow: /article.php
 Allow: /gunnars_vacation/
