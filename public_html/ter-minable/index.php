@@ -18,7 +18,7 @@
 
       <meta property="og:title" content="Baptiste Rébillard" />
       <meta property="og:description" content="Online easy CTF for beginner - Ter-minable - Baptiste Rébillard" />
-      <meta property="og:image" content="https://baptiste-reb.fr/img/ter-minable.png" />
+      <meta property="og:image" content="https://baptiste-reb.fr/articles/ter-minable.png" />
       <meta property="og:type" content="website" />
 
     <script src="https://cdn.tailwindcss.com"></script>
