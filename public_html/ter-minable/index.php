@@ -10,6 +10,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ter-minable</title>
+      <meta name="description" content="Online easy CTF for beginner - Ter-minable - Baptiste Rébillard" />
+
+      <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+      <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+
+      <meta property="og:title" content="Baptiste Rébillard" />
+      <meta property="og:description" content="Online easy CTF for beginner - Ter-minable - Baptiste Rébillard" />
+      <meta property="og:image" content="https://baptiste-reb.fr/img/ter-minable.png" />
+      <meta property="og:type" content="website" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .terminal {
