@@ -122,7 +122,9 @@
     function loadArticles() {
       fetch('articles/articles.json')
         .then(response => response.json())
-        .then(articles => {
+        .then(all_articles => {
+          let articles = all_articles.filter(article => article.referenced === true);
+
           const articleList = document.getElementById('article-list');
 
           articles.reverse() // print les articles les plus récents d'abord

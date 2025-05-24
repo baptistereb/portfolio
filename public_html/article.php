@@ -89,9 +89,9 @@ if (!$article) {
         N'hésite pas à me contacter 👇
       </p>
       <div class="flex justify-center space-x-6">
-        <a href="mailto:ton.mail@example.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">📧 Email</a>
-        <a href="https://linkedin.com/in/ton-profil" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">🔗 LinkedIn</a>
-        <a href="https://github.com/ton-github" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">💻 GitHub</a>
+        <a href="mailto:baptiste.rebillard@protonmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">📧 Email</a>
+        <a href="https://www.linkedin.com/in/baptistereb/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">🔗 LinkedIn</a>
+        <a href="https://github.com/baptistereb/" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">💻 GitHub</a>
       </div>
       <p class="text-sm text-gray-500 dark:text-gray-400 mt-6">&copy; 2025 Baptiste Rébillard</p>
     </div>

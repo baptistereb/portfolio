@@ -1,0 +1,51 @@
+<pre style="background-color:#1e1e1e; color:#d4d4d4; padding:1em; border-radius:8px; font-family:monospace;">
+<span style="color:#569CD6;">void</span> <span style="color:#DCDCAA;">demo1</span>() {
+    <span style="color:#569CD6;">int</span> a;
+    <span style="color:#569CD6;">int</span> b;
+    <span style="color:#569CD6;">int</span> c;
+    <span style="color:#569CD6;">int</span> d;
+
+    <span style="color:#C586C0;">while</span> (1) {
+        a = <span style="color:#569CD6;">readIO</span>(3);
+        b = <span style="color:#569CD6;">readIO</span>(4);
+        c = a + b;
+        d = a - b;
+        <span style="color:#569CD6;">writeIO</span>(1, c);
+        <span style="color:#569CD6;">writeIO</span>(2, d);
+    }
+}
+
+<span style="color:#569CD6;">void</span> <span style="color:#DCDCAA;">demo2</span>() {
+    <span style="color:#569CD6;">int</span> ledd;
+    <span style="color:#569CD6;">int</span> ledg;
+    <span style="color:#569CD6;">int</span> dlcount;
+    <span style="color:#569CD6;">int</span> dlcount2;
+    <span style="color:#569CD6;">int</span> dlval;
+
+    ledd = 1;
+    ledg = 128;
+
+    <span style="color:#C586C0;">while</span> (1) {
+        <span style="color:#C586C0;">if</span> (ledd == 128) {
+            ledd = 1;
+        }
+        <span style="color:#C586C0;">if</span> (ledg == 1) {
+            ledg = 128;
+        }
+        ledd = ledd * 2;
+        ledg = ledg / 2;
+        <span style="color:#569CD6;">writeIO</span>(2, ledd);
+        <span style="color:#569CD6;">writeIO</span>(1, ledg);
+
+        dlval = <span style="color:#569CD6;">readIO</span>(4) * 255;
+        dlcount = 0;
+        dlcount2 = 0;
+        <span style="color:#C586C0;">while</span> (dlcount < dlval) {
+            dlcount = dlcount + 1;
+            <span style="color:#C586C0;">while</span> (dlcount2 < 255) {
+                dlcount2 = dlcount2 + 1;
+            }
+        }
+    }
+}
+</pre>

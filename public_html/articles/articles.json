@@ -3,6 +3,7 @@
     "id": 1,
     "banner": "articles/real-intgine.png",
     "date": "2023-03-19",
+    "referenced" : true,
     "title": {
       "fr": "📐 Un moteur graphique 3D en JavaScript ?",
       "en": "📐 A 3D Graphics Engine in JavaScript ?"
@@ -16,6 +17,7 @@
     "id": 2,
     "banner": "articles/oxyhack.jpeg",
     "date": "2024-11-2",
+    "referenced" : true,
     "title": {
       "fr": "🏆 1ère place au classement avancé du CTF chez Ynov Campus !",
       "en": "🏆 1st Place in the Advanced Ranking at the Ynov Campus CTF!"
@@ -29,6 +31,7 @@
     "id": 3,
     "banner": "articles/igs.jpg",
     "date": "2025-04-20",
+    "referenced" : true,
     "title": {
       "fr": "🎮 INSA GAME SHOW 2025 : Comment sécuriser le réseau d'une LAN ?",
       "en": "🎮 INSA GAME SHOW 2025 : How to secure a LAN Network ?"
@@ -42,6 +45,7 @@
     "id": 4,
     "banner": "articles/thcon.jpg",
     "date": "2025-05-01",
+    "referenced" : true,
     "title": {
       "fr": "🎤 Retour sur la THCon 2025",
       "en": "🎤 Looking Back at THCon 2025"
@@ -49,6 +53,20 @@
     "content": {
       "fr": "<p>La <strong>Toulouse Hacking Convention (THCon)</strong> est un événement annuel majeur dédié à la cybersécurité, réunissant chercheurs, professionnels et passionnés. Depuis sa création en 2017, la THCon s'est imposée comme un rendez-vous incontournable pour la communauté infosec en Occitanie et au-delà.</p><br><br><h2 class=\"text-3xl font-semibold\">Une programmation riche et diversifiée</h2><br><br><p>L'édition 2025 s'est tenue les 10 et 11 avril à l'auditorium Marthe Condat de l'Université Paul Sabatier, suivie le 12 avril par une journée de <strong>Capture The Flag (CTF)</strong> à l'ENSEEIHT. Les conférences ont abordé des sujets tels que : la sécurité des réseaux, l'exploitation des émissions modulées, les attaques par déni de service (DoS) ou encore la sécurité des chaînes d'approvisionnement dans Kubernetes.</p><br><br><h2 class=\"text-3xl font-semibold\">Mon rôle à la THCon2025 : de la conception à la réalisation</h2><br><br><p>Depuis octobre 2024, j'ai eu l'opportunité de m'investir pleinement dans l'organisation de la THCon2025, en occupant plusieurs rôles clés :</p><br><br><ul><br>  <li><strong>Responsable du site internet</strong> : J'ai pris en charge la gestion du site officiel de l'événement, <a href=\"https://thcon.party\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\">https://thcon.party</a>, en collaboration avec l'équipe organisatrice.</li><br>  <li><strong>Création du challenge \"Gunnar's Vacation\"</strong> : Avec mon collègue <strong><a href=\"https://blog.ar-lacroix.fr/\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\"><a href=\"https://blog.ar-lacroix.fr/\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\">Lacroix Raphaël</a> (alias Chepycou)</a></strong>, nous avons conçu le challenge \"Gunnar's Vacation\", un défi de géoint. Une version du challenge si vous souhaitez le consulter est disponible ici : <a href=\"gunnars_vacation\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">Voir Gunnar's Vacation 🚀</a>. </li></ul><br><br><p>Cette première édition de la THCon a été une expérience incroyablement formatrice, et je prévois déjà de me réinvestir l’année prochaine, peut-être même au sein du bureau pour prendre encore plus d’initiatives.</p>",
       "en": "<p>The <strong>Toulouse Hacking Convention (THCon)</strong> is a major annual event dedicated to cybersecurity, bringing together researchers, professionals, and enthusiasts. Since its inception in 2017, THCon has established itself as a key event for the infosec community in Occitania and beyond.</p><br><br><h2 class=\"text-3xl font-semibold\">A Rich and Diverse Program</h2><br><br><p>The 2025 edition took place on April 10 and 11 at the Marthe Condat auditorium at Paul Sabatier University, followed by a <strong>Capture The Flag (CTF)</strong> day on April 12 at ENSEEIHT. The conferences covered advanced topics such as network security,exploiting modulated emissions, DoS attacks, and supply chain security in Kubernetes.</p><br><br><h2 class=\"text-3xl font-semibold\">My Role at THCon2025: From Design to Execution</h2><br><br><p>Since October 2024, I have had the opportunity to get fully involved in organizing THCon2025, taking on several key roles:</p><br><br><ul><br>  <li><strong>Website Manager</strong>: I took charge of managing the official event website, <a href=\"https://thcon.party\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\">https://thcon.party</a>, in collaboration with the organizing team.</li><br>  <li><strong>Creation of the \"Gunnar's Vacation\" Challenge</strong>: With my colleague <strong><a href=\"https://blog.ar-lacroix.fr/\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\"><a href=\"https://blog.ar-lacroix.fr/\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\">Lacroix Raphaël</a> (alias Chepycou)</a></strong>, we designed the \"Gunnar's Vacation\" challenge, a geoint puzzle. A version of the challenge, if you'd like to check it out, is available here : <a href=\"gunnars_vacation\" class=\"inline-flex items-center justify-center px-4 py-1 bg-blue-600 text-white font-medium rounded-md shadow hover:bg-blue-700 transition-all duration-300\">See Gunnar's Vacation 🚀</a></li></ul><br><br><p>This first edition of THCon was an incredibly formative experience, and I already plan to get more involved next year, perhaps even as part of the board to take on even more initiatives.</p>"
+    }
+  },
+  {
+    "id": 4242,
+    "banner": "articles/fpga.jpg",
+    "date": "2025-05-23",
+    "referenced" : false,
+    "title": {
+      "fr": "🖧 Demo projet SI FPGA",
+      "en": "🖧 Computer Systems FPGA Demo"
+    },
+    "content": {
+      "fr": "<p>Projet réalisé dans le cadre du projet système informatique à l'INSA Toulouse avec Leandro Rodriguez. <br>💾 Le code source est disponible sur <a href=\"https://github.com/Leandro-rdz/Compilateur-MICroprocesseur\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\" target=\"_blank\" rel=\"noopener noreferrer\">ce dépôt GitHub</a>. La démonstration se trouve ci-dessous.<br><br></p><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe class=\"rounded-lg\" src=\"https://player.vimeo.com/video/1087289654?h=50f24d465d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Demo projet SI\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script><br><br><iframe src='articles/fpga_code.html' style='width: 100%; height: 500px; boder: 0'>",
+      "en": "<p>Project carried out as part of the computer systems project at INSA Toulouse with Leandro Rodriguez. <br>💾 The source code is available on <a href=\"https://github.com/Leandro-rdz/Compilateur-MICroprocesseur\" class=\"text-blue-600 hover:text-blue-800 transition-colors duration-200\" target=\"_blank\" rel=\"noopener noreferrer\">this GitHub repository</a>. The demo is shown below(only in french).<br><br></p><div class=\"rounded\" style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1087289654?h=50f24d465d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Demo projet SI\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script><br><br><iframe src='articles/fpga_code.html' style='width: 100%; height: 500px; boder: 0'>"
     }
   }
 ]
