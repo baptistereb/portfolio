@@ -32,8 +32,7 @@ if (!$article) {
   <meta property="og:description" content="<?php echo htmlspecialchars(mb_strimwidth(strip_tags($article['content']['en']), 0, 200, '...')); ?>" />
   <meta property="og:image" content="https://baptiste-reb.fr/<?= htmlspecialchars($article['banner']); ?>" />
   <meta property="og:url" content="https://baptiste-reb.fr/article.php?id=<?= $article['id']; ?>" />
-  <meta property="og:site_name" content="CyberBlog" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Baptiste Rébillard" />
   <meta property="article:author" content="https://baptiste-reb.fr" />
 
   <script>
